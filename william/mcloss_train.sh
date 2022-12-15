@@ -1,0 +1,14 @@
+python3 mcloss_train.py 's101_mcloss_lr0.005_lr-m0.01_mu0.005' \
+                        --train-dir ~/data/DLCV/food_data/train \
+                        --valid-dir ~/data/DLCV/food_data/val \
+                        --seed 1116 \
+                        --gpu-ids 0 \
+                        --batch-size 64 \
+                        --save-freq 2 \
+                        --oversampling-thr 0.000005 \
+                        --num-workers 10 \
+                        --num-epochs 100 \
+                        --optimizer SGD \
+                        --optimizer-settings '{"lr":5e-3, "weight_decay":5e-4, "momentum":0.9}' \
+                        --lr-scheduler MultiStepLR \
+                        --scheduler-settings '{"milestones":[50, 75], "gamma": 0.1}'
